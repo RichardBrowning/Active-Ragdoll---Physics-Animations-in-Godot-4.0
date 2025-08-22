@@ -43,6 +43,7 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
 	var local_vel = transform.basis.inverse() * velocity
-	anim_tree.set("parameters/blend_position", Vector2(local_vel.x, -local_vel.z))
+	# anim_tree.set("parameters/blend_position", Vector2(local_vel.x, -local_vel.z))
+	anim_tree.set("parameters/Locomotion/blend_position", Vector2(local_vel.x, -local_vel.z))
 
 	move_and_slide()
